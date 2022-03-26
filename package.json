@@ -1,0 +1,13 @@
+{
+  "name": "codeengine-test",
+  "version": "1.0.0",
+  "description": "codeengine-test",
+  "author": "yorisue@jp.ibm.com",
+  "main": "codeengine-test.js",
+  "scripts": {
+    "start": "node codeengine-test.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
+  }
+}
