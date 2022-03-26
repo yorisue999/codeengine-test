@@ -8,45 +8,45 @@ function main(params) {
 
 console.log("main start!");
 
-    // ŠOŒ`ŠÄ‹ƒŠƒNƒGƒXƒg’è‹`
+    // å¤–å½¢ç›£è¦–ãƒªã‚¯ã‚¨ã‚¹ãƒˆå®šç¾©
     var get_options = {
-        url: 'https://statuscode-generator.herokuapp.com/status?code=200',  // ROKS‘ã‘ÖƒAƒvƒŠi”CˆÓ‚ÌƒXƒe[ƒ^ƒXw’è‚ª‰Â”\j
+        url: 'https://statuscode-generator.herokuapp.com/status?code=400',  // ROKSä»£æ›¿ã‚¢ãƒ—ãƒªï¼ˆä»»æ„ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹æŒ‡å®šãŒå¯èƒ½ï¼‰
         method: 'GET',
-        timeout: 16 * 1000     // ƒ^ƒCƒ€ƒAƒEƒgw’èi16•bj
+        timeout: 16 * 1000     // ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆæŒ‡å®šï¼ˆ16ç§’ï¼‰
     };
 
-    // WebhookƒŠƒNƒGƒXƒg’è‹`
+    // Webhookãƒªã‚¯ã‚¨ã‚¹ãƒˆå®šç¾©
     var post_options = {
-        url: 'https://talkapptestyori.us-south.cf.appdomain.cloud/OAuthMainServlet',    // JP1’†ŒpƒT[ƒo‘ã‘ÖƒAƒvƒŠ
+        url: 'https://talkapptestyori.us-south.cf.appdomain.cloud/OAuthMainServlet',    // JP1ä¸­ç¶™ã‚µãƒ¼ãƒä»£æ›¿ã‚¢ãƒ—ãƒª
         method: 'POST',
         data: {
-            name: 'functions', message: 'ŠOŒ`ŠÄ‹ƒGƒ‰['
+            name: 'functions', message: 'å¤–å½¢ç›£è¦–ã‚¨ãƒ©ãƒ¼'
         },
         headers: {
             'content-type': 'application/json'
         }
     };
 
-console.log("ŠOŒ`ŠÄ‹ƒŠƒNƒGƒXƒg‘—M start!");
+console.log("å¤–å½¢ç›£è¦–ãƒªã‚¯ã‚¨ã‚¹ãƒˆé€ä¿¡ start!");
 
-    // ŠOŒ`ŠÄ‹ƒŠƒNƒGƒXƒg‘—M
+    // å¤–å½¢ç›£è¦–ãƒªã‚¯ã‚¨ã‚¹ãƒˆé€ä¿¡
     return axios.request(get_options)
-        // ³íI—¹iHTTPƒXƒe[ƒ^ƒX 200”Ô‘äj
+        // æ­£å¸¸çµ‚äº†ï¼ˆHTTPã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ 200ç•ªå°ï¼‰
         .then(function (response) {
             console.log('Check OK!  STATUS_CODE=' + response.status);
         })
-        // ƒGƒ‰[ˆ—iHTTPƒXƒe[ƒ^ƒX 200”Ô‘äˆÈŠOj
+        // ã‚¨ãƒ©ãƒ¼å‡¦ç†ï¼ˆHTTPã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ 200ç•ªå°ä»¥å¤–ï¼‰
         .catch(function (err) {
-            // ƒGƒ‰[‚ÍLogDNA‚ÖƒGƒ‰[“à—e‚ğo—Í
+            // ã‚¨ãƒ©ãƒ¼æ™‚ã¯LogDNAã¸ã‚¨ãƒ©ãƒ¼å†…å®¹ã‚’å‡ºåŠ›
             console.log('Check NG!!!!  ERROR_MSG=' + err);
 
-            // ƒGƒ‰[‚ÍWebhookƒŠƒNƒGƒXƒg‘—M
+            // ã‚¨ãƒ©ãƒ¼æ™‚ã¯Webhookãƒªã‚¯ã‚¨ã‚¹ãƒˆé€ä¿¡
             return axios.request(post_options)
-                // ³íI—¹iHTTPƒXƒe[ƒ^ƒX 200”Ô‘äj
+                // æ­£å¸¸çµ‚äº†ï¼ˆHTTPã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ 200ç•ªå°ï¼‰
                 .then(function (response) {
                     console.log('Webhook OK!  STATUS_CODE=' + response.status);
                 })
-                // ƒGƒ‰[ˆ—iHTTPƒXƒe[ƒ^ƒX 200”Ô‘äˆÈŠOj
+                // ã‚¨ãƒ©ãƒ¼å‡¦ç†ï¼ˆHTTPã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ 200ç•ªå°ä»¥å¤–ï¼‰
                 .catch(function (err) {
                     console.log('Webhook NG!!!!  ERROR_MSG=' + err);
                 });
