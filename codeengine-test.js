@@ -2,7 +2,7 @@ const axios = require('axios');
 
 // 監視リクエスト定義
 var get_options = {
-    url: 'https://statuscode-generator.herokuapp.com/status?code=400',  // 監視対象
+    url: 'https://statuscode-generator.herokuapp.com/status?code=200',  // 監視対象
     method: 'GET',
     timeout: 16 * 1000     // タイムアウト指定（16秒）
 };
